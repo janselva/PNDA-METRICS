@@ -1,0 +1,42 @@
+environment:
+  # Mirror of resources required for provisioning PNDA, 
+  MIRROR_PATH: http://34.215.51.80/rhel/develop/
+  
+  #if its AWS PNDA setup provide Bastion ip
+  BASTION_IP: 52.26.11.240
+  
+  #Metrics server ip to install influxdb and telegraf
+  METRIC_SERVER_IP : 10.0.1.175
+  #metrics server user name
+  METRIC_SERVER_USER_NAME : ec2-user
+  
+  #pemfile with fullpath
+  PEM_FILE : /home/ubuntu/chandan.pem
+  
+    
+  #Telegraf Input plugin
+  #List of JMX ip address or hostname
+  KAFKA_SERVER_LIST:
+   - verizon-kafka-0
+   - verizon-kafka-1
+  
+  #Telegraf Input plugin
+  #Jolokia Proxy detail for JMX, Jolokia used the JETTY webserver , provide Jetty ip and port number
+  #for default setup Jetty  is installed in metrics server, it other server provide ip
+  #JETTY_IP: 10.0.1.175
+  JETTY_PORT: 8200
+  
+  #Telegraf Output plugin
+  #influx db portnumber and ip address if its different server
+  #INFLUXDB_IP: 10.0.1.175
+  INFLUXDB_PORT: 8086
+  
+  #Telegraf Output Plugin
+  #socket listener for Spark Data
+  TELEGRAF_SOCKET_LISTENER_PORT: 2003 
+  
+  #packages version, after installation its used to verify the version
+  INFLUXDB_VERSION: 1.4.2
+  JETTY_VERSION: 9.4.7
+  JOLOKIA_VERSION: 1.3.7
+
