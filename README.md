@@ -60,3 +60,14 @@ Step2:  run python script
 Step3: Logs will be stored in cli/logs folder
 
 
+# Tested Environments
+
+ * operating system tested : RHEL7.4 <AWS Platform>
+ * Deployment server Python version tested : 2.7
+  
+# software Versions
+
+ * INFLUXDB_VERSION: 1.4.2
+ * JETTY_VERSION: 9.4.7
+ * JOLOKIA_VERSION: 1.3.7
+ * TELEGRAF_VERSION: 1.5.0-1

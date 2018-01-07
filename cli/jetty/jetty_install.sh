@@ -100,7 +100,7 @@ fi;
 tar zxvf $jolokia_file_name 
 sudo cp jolokia-$jolokia_version/agents/jolokia.war /opt/jetty/webapps/jolokia.war; 
 sudo chown jetty:jetty /opt/jetty/webapps/jolokia.war
-echo "                         Restarting jetty webserver"
+echo "                         Restarting jetty web-server"
 sudo service jetty stop
 sleep 5
 echo starting jetty server

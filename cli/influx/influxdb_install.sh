@@ -28,7 +28,7 @@ if [ $? -ne 0 ]; then
         echo "       ********* Influx Db installation FAILED"
         exit 1;
     else
-        echo "influxdb installed succesfully"
+        echo "influxdb installed successfully"
     fi;
 else
     echo influxdb Version $influxdb_version is already installed
@@ -66,12 +66,27 @@ fi
 list_databases=`influx -execute 'show databases'`
 check_database=`echo $list_databases | grep -c telegraf`
 if [ $check_database == 0 ]; then
-   echo "Database telgraf failed to create"
+   echo "FAIL: Database telgraf failed to create"
    echo "       ********* Influx Db installation FAILED"
    exit 1
 else
-   echo "Database telgraf created succesfully"
+   echo "Database telgraf created successfully"
 fi
+
+echo "*******************************************************************************"
+echo "                         Influx Db retention policy"
+echo "*******************************************************************************"
+policy="create retention policy $INFLUX_RETENTION_POLICY_NAME on telegraf Duration  $INFLUX_RETENTION_POLICY_VALUE Replication 1 DEFAULT"
+retention_policy=`influx -execute "$policy"`
+check_retention_policy=`influx -database 'telegraf' -execute 'SHOW RETENTION POLICIES' | grep -c "$INFLUX_RETENTION_POLICY_NAME .* true"`
+if [ $check_retention_policy == 0 ]; then
+   echo "FAIL: IN Database telgraf Retention policy creation failed"
+   echo "       ********* Influx Db installation FAILED"
+   exit 1
+else
+   echo "Database telgraf created successfully"
+fi
+
 echo "*******************************************************************************"
 echo "                         Influx Db installation Completed Successfully"
 echo "*******************************************************************************"

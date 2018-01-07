@@ -1,5 +1,5 @@
 https://dl.influxdata.com/influxdb/releases/influxdb-1.4.2.x86_64.rpm
-https://redirector.gvt1.com/edgedl/go/go1.9.2.linux-amd64.tar.gz
-https://s3.amazonaws.com/mester-pnda/telegraf.gz
-https://github.com/rhuss/jolokia/releases/download/v1.3.7/jolokia-1.3.7-bin.tar.gz
+https://dl.influxdata.com/telegraf/releases/telegraf-1.5.0-1.x86_64.rpm
 http://central.maven.org/maven2/org/eclipse/jetty/jetty-distribution/9.4.7.v20170914/jetty-distribution-9.4.7.v20170914.tar.gz
+https://github.com/rhuss/jolokia/releases/download/v1.3.7/jolokia-1.3.7-bin.tar.gz
+https://redirector.gvt1.com/edgedl/go/go1.9.2.linux-amd64.tar.gz

@@ -15,7 +15,8 @@ mkdir -p $STATIC_FILE_DIR
 cd $STATIC_FILE_DIR
 echo "$STATIC_FILE_LIST" | while read STATIC_FILE
 do
-    echo $STATIC_FILE
+    echo -e "\n***************Downloading Files *****************"
+    echo -e "$STATIC_FILE\n"
 
     ATTEMPT=0
     RETRY=3
