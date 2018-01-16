@@ -41,12 +41,12 @@ do
        echo "url = \"service:jmx:rmi:///jndi/rmi://$jmx_server/jmxrmi\""$'\n' >> /tmp/telegraf.conf
        done
    elif [ "{{KAFKA_OUTPUT_PLUGIN}}" == "$LINE" ]; then
-       echo '[outputs.kafka]'$'\n' >> /tmp/telegraf.conf
-       echo "brokers = $KAFKA_BROKERS_LIST" >> /tmp/telegraf.conf
-       echo "topic = \"$KAFKA_TOPIC\"" >> /tmp/telegraf.conf
+       echo '[[outputs.kafka]]'$'\n' >> /tmp/telegraf.conf
+       echo "   brokers = $KAFKA_BROKERS_LIST" >> /tmp/telegraf.conf
+       echo "   topic = \"$KAFKA_TOPIC\"" >> /tmp/telegraf.conf
 
    elif [ "{{MBEAN_CONFIG}}" == "$LINE" ]; then
-       cat /tmp/telegraf_mbean.yaml >> /tmp/telegraf.conf
+       cat /tmp/telegraf_mbean.conf >> /tmp/telegraf.conf
    else
        echo $LINE >> /tmp/telegraf.conf
    fi

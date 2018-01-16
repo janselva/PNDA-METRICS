@@ -88,7 +88,6 @@
 #    brokers = ["localhost:9092"] # EDIT THIS LINE
 #    # Kafka topic for producer messages
 #    topic = "telegraf"
-{{KAFKA_OUTPUT_PLUGIN}}
 	
 
 # Configuration for influxdb server to send metrics to
@@ -135,6 +134,7 @@
   # content_encoding = "gzip"
 
 
+{{KAFKA_OUTPUT_PLUGIN}}
 
 ###############################################################################
 #                            PROCESSOR PLUGINS                                #
