@@ -129,7 +129,7 @@ def main():
                     'influx/influxdb.conf', 'influx/influxdb_install.sh',
                     'jetty/jetty_install.sh', 'jetty/start.ini',
                     'telegraf/telegraf.conf_tmpl', 'telegraf/telegraf_install.sh',
-                    'telegraf/telegraf_mbean.yaml']
+                    '../telegraf_mbean.conf']
     CONSOLE.info('''Copying supporting file to Metrics server .
                   Expect this to take a few minutes,
                   check the debug log for progress (%s).''', LOG_FILE_NAME)
