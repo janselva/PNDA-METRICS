@@ -48,8 +48,10 @@ Step3: copy the mirror_metrics directory to pnda mirror server.
 # Run Deployment script
 
 step1: create  cli/metrics_env.yaml file 
-     cp metrics_env_example.yaml cli/metrics_env.yaml
-     Edit cli/metrics_env.yaml based on your setup 
+
+        cp metrics_env_example.yaml cli/metrics_env.yaml
+        
+        Edit cli/metrics_env.yaml based on your setup 
      
 Step2:  run python script
 
