@@ -12,6 +12,7 @@ if [[ -z "$mirror_path" ]];then
         exit 1
 fi
 
+mkdir /mnt/influxdb
 influx -version | grep $influxdb_version &> /dev/null
 if [ $? -ne 0 ]; then
     file_name="influxdb""-"$influxdb_version".x86_64.rpm"
@@ -35,7 +36,7 @@ else
 fi
  
 echo "Checking /etc/influxdb/influxdb.conf config file"
-
+chown influxdb:influxdb /mnt/influxdb
 diff_file=`diff /tmp/influxdb.conf /etc/influxdb/influxdb.conf  |  wc -l`
 if [ $diff_file != 0 ]; then
    echo "Taking backup of influxdb config file"
